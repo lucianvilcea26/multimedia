@@ -1,25 +1,128 @@
-.cell {
-    width: 50px;
-    height: 50px;
-    border: 1px solid #777;
-    border-radius: 5px;
-    background-color: #bbb;
-    font-size: 40px;
-    padding: 4px;
-    text-transform: uppercase;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f2f5;
+}
+
+#game-container {
     text-align: center;
-    display: inline-block;
-    margin: 2px;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+#stats {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+#message {
+    height: 1.5rem;
+    margin-bottom: 1rem;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+#board {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.row {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.cell {
+    width: 55px;
+    height: 55px;
+    border: 2px solid #d3d6da;
+    border-radius: 4px;
+    background-color: #ffffff;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s, background-color 0.4s, border-color 0.4s;
+}
+
+.cell.flip {
+    transform: rotateX(180deg);
 }
 
 .green {
-    background-color: lightgreen;
+    background-color: #6aaa64;
+    border-color: #6aaa64;
+    color: white;
 }
 
 .yellow {
-    background-color: lightyellow;
+    background-color: #c9b458;
+    border-color: #c9b458;
+    color: white;
 }
 
 .red {
-    background-color: lightcoral;
+    background-color: #787c7e;
+    border-color: #787c7e;
+    color: white;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #d3d6da;
+    border-radius: 4px;
+    width: 120px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+    border-color: #6aaa64;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s, background-color 0.2s;
+}
+
+#guessButton {
+    background-color: #6aaa64;
+    color: white;
+}
+
+#guessButton:hover {
+    background-color: #5d9358;
+}
+
+#newGameButton {
+    background-color: #3498db;
+    color: white;
+}
+
+#newGameButton:hover {
+    background-color: #2980b9;
 }

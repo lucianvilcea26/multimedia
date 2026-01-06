@@ -10,9 +10,21 @@
 </head>
 
 <body>
-    <div id="board"></div>
-    <input type="text" id="guessInput" />
-    <button type="button" id="guessButton">Guess</button>
+    <div id="game-container">
+        <h1>Wordle Clone</h1>
+        <div id="stats">
+            Games: <span id="games-played">0</span> | 
+            Win %: <span id="win-percent">0</span> | 
+            Streak: <span id="current-streak">0</span>
+        </div>
+        <div id="message"></div>
+        <div id="board"></div>
+        <div class="controls">
+            <input type="text" id="guessInput" maxlength="5" placeholder="Enter 5 letters" />
+            <button type="button" id="guessButton">Guess</button>
+            <button type="button" id="newGameButton" style="display: none;">New Game</button>
+        </div>
+    </div>
 </body>
 
 </html>
