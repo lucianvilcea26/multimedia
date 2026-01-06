@@ -8,6 +8,48 @@
     <script src="scripts/chart.js" type="text/javascript"></script>
 </head>
 <body>
-    <canvas id="chartCanvas" width="900" height="600"></canvas>
+    <div id="container">
+        <div id="controls">
+            <button id="startPauseBtn">Pause</button>
+            <button id="resetBtn">Reset</button>
+            <button id="exportBtn">Export PNG</button>
+            <div>
+                Speed: <input type="range" id="speedRange" min="100" max="2000" value="1000">
+            </div>
+            <div>
+                Min: <input type="number" id="minValue" value="0" style="width: 50px;">
+                Max: <input type="number" id="maxValue" value="600" style="width: 50px;">
+            </div>
+            <div>
+                <label><input type="checkbox" id="gridToggle" checked> Grid</label>
+                <label><input type="checkbox" id="smoothToggle"> Smooth</label>
+            </div>
+            <div>
+                Type: 
+                <select id="chartType">
+                    <option value="line">Line</option>
+                    <option value="bar">Bar</option>
+                    <option value="area">Area</option>
+                    <option value="scatter">Scatter</option>
+                </select>
+            </div>
+            <div>
+                Theme:
+                <select id="themeSelect">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="highContrast">High Contrast</option>
+                </select>
+            </div>
+            <div id="stats">
+                <h3>Stats</h3>
+                <div id="seriesStats"></div>
+            </div>
+        </div>
+        <div id="canvas-container" style="position: relative;">
+            <canvas id="chartCanvas" width="900" height="600"></canvas>
+            <div id="tooltip" style="position: absolute; display: none; background: rgba(0,0,0,0.7); color: white; padding: 5px; border-radius: 3px; pointer-events: none; font-size: 12px;"></div>
+        </div>
+    </div>
 </body>
 </html>

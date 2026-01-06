@@ -4,7 +4,33 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background 0.3s, color 0.3s;
+}
+#container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background: #fff;
+}
+#controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 220px;
 }
 #chartCanvas {
-    border: 1px solid black;
+    border: 1px solid #ddd;
+    cursor: crosshair;
 }
+body.dark { background: #121212; color: #e0e0e0; }
+body.dark #container { background: #1e1e1e; box-shadow: 0 0 10px rgba(255,255,255,0.05); }
+body.dark #chartCanvas { border-color: #333; }
+body.highContrast { background: #000; color: #0f0; }
+body.highContrast #container { background: #000; border: 2px solid #0f0; }
+body.highContrast #chartCanvas { border: 2px solid #0f0; }
+#stats h3 { margin-top: 0; }
+#seriesStats { font-size: 0.9em; }
